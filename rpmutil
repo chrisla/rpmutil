@@ -1,0 +1,5 @@
+#!/bin/bash
+Dirname=$(/usr/bin/dirname $0)
+Basename=$(/bin/basename $0)
+
+$Dirname/libspy/rpmutil.py "$@"
