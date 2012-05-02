@@ -1,0 +1,2 @@
+This Program is copyright (c) 2012 Chris La
+I still need to figure this out. For now assume read only, and quick test is allowed.
