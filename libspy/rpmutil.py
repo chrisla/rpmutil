@@ -5,7 +5,7 @@ copyright(c) 2012 Chris La
 
 This module runs rpm command on remote machines, using ssh via paramiko
 It implements several class for use by other python scripts.
-It can also be run directly as a cli (python passh.py)
+It can also be run directly as a cli (python rpmutil.py)
 
 """
 
@@ -17,9 +17,6 @@ import getopt
 import re
 import string
 import time
-#import logger
-
-#logging.handlers.SMTPHandler(mailhost, fromaddr, toaddrs, subject[, credentials])
 
 dirname = os.path.dirname(os.path.realpath(sys.argv[0]))
 
@@ -29,24 +26,11 @@ _thisScript = os.path.basename(sys.argv[0]).split('.')[0].strip()
 # add local directories to lib path so that it can run from any location
 sys.path.append(dirname + '/.')
 sys.path.append(dirname + '/..')
-#sys.path.append(dirname + '/scripts/passh/')
-
-#insert at beginning of path
-#sys.path.insert(0,dirname + '/scripts/passh/')
-
-#print "%s" %(sys.path)
-#exit()
 
 if not Inline:
     from pa.passh import Passh 
-#    import passh
-#    Passh = passh.passh.Passh
 
-#import  passh.passh
-#print dir(Passh)
-#import passh
-
-# Linux source defaults
+# Linux source defaults. These defaults are only used if a value is not supplied via CLI.
 buildHost = 'build1' 
 buildName = 'automation'
 buildPass = 'automation'
